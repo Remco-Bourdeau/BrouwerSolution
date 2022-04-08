@@ -1,0 +1,23 @@
+﻿@model BrouwersViewModel
+@{ ViewData["Title"] = "Index";}
+<h1>Index</h1>
+<ul>
+    @foreach(var b in Model.Brouwers)
+            {
+                <li>
+                    <a href="#" data-id="@b.Id">
+                        @b.Naam
+                    </a>
+                </li>
+            }
+</ul>
+@if(Model.GeselecteerdeBrouwer is not null)
+            {
+                <dl id="extradata" style="display:none">
+                    <dt>Postcode</dt>
+                    <dd id="postcode"></dd>
+                    <dt>Gemeente</dt>
+                    <dd id="gemeente"></dd>
+                </dl>
+                <script src="~/js/index.js" defer></script>
+            }
